@@ -247,7 +247,7 @@
     (descr "Mini-PCI Express bus connector full size with dual clips (https://s3.amazonaws.com/fit-iot/download/facet-cards/documents/PCI_Express_miniCard_Electromechanical_specs_rev1.2.pdf#page=28)")
     (tags "mini pcie")
     (attr smd)
-    (fp_text reference "REF**" (at -12.5 6.35 90) (layer "F.SilkS")
+    (fp_text reference "REF**" (at -12.5 6.35 90) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp b3fa7cf1-cde5-45a0-9045-69dd7f968f06)
     )
