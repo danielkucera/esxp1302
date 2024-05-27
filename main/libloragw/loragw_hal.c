@@ -829,10 +829,11 @@ int lgw_debug_setconf(struct lgw_conf_debug_s * conf) {
         CONTEXT_DEBUG.ref_payload[i].payload[3] = (uint8_t)(CONTEXT_DEBUG.ref_payload[i].id >> 0);
     }
 
-    if (conf->log_file_name != NULL) {
-        strncpy(CONTEXT_DEBUG.log_file_name, conf->log_file_name, sizeof CONTEXT_DEBUG.log_file_name);
-        CONTEXT_DEBUG.log_file_name[sizeof CONTEXT_DEBUG.log_file_name - 1] = '\0'; /* ensure string termination */
-    }
+//error: the comparison will always evaluate as 'true' for the address of 'log_file_name' will never be NULL [-Werror=address]
+//    if (conf->log_file_name != NULL) {
+//        strncpy(CONTEXT_DEBUG.log_file_name, conf->log_file_name, sizeof CONTEXT_DEBUG.log_file_name);
+//        CONTEXT_DEBUG.log_file_name[sizeof CONTEXT_DEBUG.log_file_name - 1] = '\0'; /* ensure string termination */
+//    }
 
     return LGW_HAL_SUCCESS;
 }
