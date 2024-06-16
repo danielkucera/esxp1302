@@ -42,6 +42,7 @@ void ioe_init();
 void led_mode(int mode, int intv, int duty_cycle);
 void oled_init();
 void oled_show_str(uint8_t x, uint8_t y, char ch[], uint8_t text_size);
+void oled_show_one_line(uint8_t x, uint8_t y, char *str, uint8_t text_size);
 void oled_off(void);
 void oled_on(void);
 void oled_cls(void);

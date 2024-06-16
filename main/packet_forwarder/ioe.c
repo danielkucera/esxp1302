@@ -17,8 +17,12 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #include "freertos/timers.h"
 #include "ioe.h"
 
+#include <string.h>         /* strncpy */
+
 // OLED --------------------------------
 #define SSD1306_ADDR               0x3C
+
+#define N_CHAR_A_ROW    21  // max chars in a row is 21 in oled display mode=1
 
 const unsigned char F6x8[][6] =
 {
@@ -426,4 +430,17 @@ void oled_show_str(uint8_t x, uint8_t y, char ch[], uint8_t text_size)
             }
             break;
     }
+}
+
+void oled_show_one_line(uint8_t x, uint8_t y, char *str, uint8_t text_size)
+{
+    char *p = str;
+    int len = strlen(str);
+    char buf[N_CHAR_A_ROW + 1] = "                     ";  // 21 ' 's
+
+    if(len < N_CHAR_A_ROW){
+        strncpy(buf, str, len);
+        p = buf;
+    }
+    oled_show_str(x, y, p, text_size);
 }

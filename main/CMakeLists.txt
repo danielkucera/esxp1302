@@ -52,6 +52,7 @@ else()
         "packet_forwarder/led_indication.c"
         "packet_forwarder/web_config.c"
         "packet_forwarder/http_server.c"
+        "packet_forwarder/networking.c"
     )
 endif()
 
